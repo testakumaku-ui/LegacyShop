@@ -48,33 +48,3 @@ text
 Интеграционный расчёт	1
 Они проверяют:
 
-
-Пример использования
-csharp
-var items = new List<OrderItem>
-{
-    new("P1", "Ноутбук", 60000, 1, ProductCategory.Electronics, 2)
-};
-
-var order = new Order(CustomerType.VIP, "Moscow", "SALE3", items);
-var service = new OrderCalculationService();
-
-OrderCalculationResult result = service.Calculate(order);
-Console.WriteLine($"Итого к оплате: {result.Total:C}");
-// Выведет: Итого к оплате: 49 020,00 ₽ (зависит от логики)
-Каждый сервис можно использовать отдельно:
-
-csharp
-var discountService = new DiscountService();
-decimal discount = discountService.Calculate(order, subtotal);
-🛠 Принципы рефакторинга
-Single Responsibility – каждый класс занимается только одним аспектом расчёта
-
-Отказ от магических строк – типы клиентов, категории товаров и города вынесены в перечисления и константы
-
-Явная валидация – все ошибки генерируют кастомные исключения вместо возврата строки "ERROR"
-
-Модель результата – метод возвращает OrderCalculationResult, а не строку
-
-Тестируемость – зависимости не скрыты, сервисы легко подменяются
-
