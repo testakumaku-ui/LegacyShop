@@ -1,7 +1,5 @@
 # LegacyShop
 
-   ![image alt](https://github.com/testakumaku-ui/SearchApp/blob/b41a6e91ed0e6be7df25f30b29af387257125aa6/BookSearch.png)
-
 Модуль расчёта стоимости заказа для интернет-магазина, полученный в виде legacy-кода и отрефакторенный с упором на читаемость, тестируемость и простоту расширения.
 
 ## 🧠 Что это?
